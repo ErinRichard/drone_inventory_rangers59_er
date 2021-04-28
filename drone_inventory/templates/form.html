@@ -1,0 +1,33 @@
+<!-- HTML Produced By the Flask Form -->
+<!-- add a POST method -->
+<form method="POST">
+    <!-- add template variable -->
+    <!-- Will tie to the SECRET_KEY we created in config.py file -->
+    <!-- Need this in order for it to be a valid form! -->
+    <!-- Hidden means it's hidden from view unless looking at inspect -->
+    {{ form.hidden_tag() }}
+    
+    <!-- form-group is a bootstrap class -->
+    <div class="form-group">
+
+        <fieldset id="email-field">
+            <!-- call on the variables for the form -->
+            <!-- see forms.py to find that the name is 'email' by looking at the position of the arguments within the class attributes/variables -->
+                {{ form.email.label }}
+                <!-- Instantiate: -->
+                <!-- 'form-control' is a bootstrap class -->
+                {{ form.email(class = 'form-control',placeholder = "Place Email Here") }}
+        </fieldset>
+
+        <fieldset id='pass-field'>
+            {{ form.password.label }}
+            {{ form.password(class = 'form-control',placeholder = "Place Password Here")}}
+        </fieldset>
+
+        <!-- Submit Button -->
+        <!-- The btn classes are from Bootstrap -->
+        {{ form.submit_button(class = "btn btn-primary") }}
+
+
+    </div>
+</form>

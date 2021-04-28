@@ -1,0 +1,168 @@
+<!-- Tell Flask that we want to extend base.html so that we can use it -->
+<!-- The extends 'base.html' statement gives index.html the navbar we created in base.html and (styled in main.css) -->
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Flask Flashed Message to User -->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'user-created' %}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class='close' data-dismiss = 'alert'>&times;</button>
+                    </div> 
+                    
+                {% elif cat == 'auth-success' %}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class='close' data-dismiss = 'alert'>&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+
+<div class="container">
+        <!-- Header Section -->
+        <header class="row">
+            <div class="col-12 col-md-6" id="header-text">
+                <h2>Let's Build the future of drone Inventory management together!</h2>
+                <h5>Create an amazing API tool for drone inventory management</h5>
+                <div>
+                    <button class="btn btn-primary">View Our Docs</button>
+                    <button class="btn btn-primary">Join Our Slack</button>
+                </div>
+            </div>
+            
+            <!-- Header Image -->
+            <div class="col-12 col-md-6">
+                <img src="../../static/images/undraw_server_status_5pbv.svg" alt="Drone Server Image" class="header-image">
+            </div>
+
+        </header>
+
+        <!-- Start of Middle Section -->
+        <section class="row">
+            <div class="col-12" id="middle-text">
+                <h2>Display Your Inventory!</h2>
+                <p>You can harness the power of our API to expand your Drone Brand!</p>
+            </div>
+        </section>
+
+        <!-- Collection of Features -->
+        <section class="row" id="features-section">
+
+            <div class="col-12 col-md-4">
+                <img src="../../static/images/api.png" alt="API Image" id="api-image">
+                <h4>Dedicated API Routes</h4>
+                <p>If you are a fan of using traditional API routes, we got it!</p>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <img src="../../static/images/graphql.png" alt="GraphQL-image" id="graphpq-image">
+                <h4>GraphQL API Route</h4>
+                <p>If you want ALL data from one endpoint, we have that, too!</p>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <img src="../../static/images/db.png" alt="database-image" id="database-image">
+                <h4>Backed By a PostreSQL Database</h4>
+                <p>All data will be persisted in a PostgreSQL Database!</p>
+            </div>
+        </section>
+
+        <sesction class="row">
+            <div class="col-12 col-md-6">
+                <img src="../../static/images/undraw_drone_surveillance_kjjg.svg" alt="Drone Image" id="Drone-image">
+            </div>
+            
+            <div class="col-12 col-md-6">
+                <h4>Talk with like-minded drone business owners</h4>
+                <p>
+                    Talk with other devs around the world and collab on projects with your data.
+                    Join the Slack channel today!!
+                </p>
+
+                <div>
+                    <button class="btn btn-primary">View on Github</button>
+                    <button class="btn btn-primary">Join Our Slack Channel!</button>
+                </div>
+            </div>
+        </sesction>
+
+        <!-- Start of Footer Section -->
+        <footer class="row" id="footer">
+            <div class="col-2 col-md-2">
+                <img src="../../static/images/Coding Drones Logo.png" alt="Coding Drones Logo" id="footer-logo">
+            </div>
+
+            <div class="col-2 col-md-2">
+                <div class="footer-text-flex">
+                    <h4>Platform</h4>
+                    <p>Why Coding Drones?</p>
+                    <p>The Coding Drones Project</p>
+                    <p>Donate</p>
+                    <p>Spread the Word</p>
+                    <p>Our Process</p>
+                </div>
+            </div>
+
+
+            <div class="col-2 col-md-2">
+                <div class="footer-text-flex">
+                    <h4>Platform</h4>
+                    <p>Why Coding Drones?</p>
+                    <p>The Coding Drones Project</p>
+                    <p>Donate</p>
+                    <p>Spread the Word</p>
+                    <p>Our Process</p>
+                </div>
+            </div>
+
+
+            <div class="col-2 col-md-2">
+                <div class="footer-text-flex">
+                    <h4>Platform</h4>
+                    <p>Why Coding Drones?</p>
+                    <p>The Coding Drones Project</p>
+                    <p>Donate</p>
+                    <p>Spread the Word</p>
+                    <p>Our Process</p>
+                </div>
+            </div>
+
+
+            <div class="col-2 col-md-2">
+                <div class="footer-text-flex">
+                    <h4>Platform</h4>
+                    <p>Why Coding Drones?</p>
+                    <p>The Coding Drones Project</p>
+                    <p>Donate</p>
+                    <p>Spread the Word</p>
+                    <p>Our Process</p>
+                </div>
+            </div>
+
+            
+            <div class="col-2 col-md-2">
+                <div class="footer-text-flex">
+                    <h4>Platform</h4>
+                    <p>Why Coding Drones?</p>
+                    <p>The Coding Drones Project</p>
+                    <p>Donate</p>
+                    <p>Spread the Word</p>
+                    <p>Our Process</p>
+                </div>
+            </div>
+
+        </footer>
+
+</div>
+
+{% endblock content %}
