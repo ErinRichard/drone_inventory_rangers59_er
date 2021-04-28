@@ -17,7 +17,7 @@ def create_drone(current_user_token):
     name = request.json['name']
     description = request.json['description']
     price = request.json['price']
-    cam_quality = request.json['cam_quality']
+    camera_quality = request.json['camera_quality']
     flight_time = request.json['flight_time']
     max_speed = request.json['max_speed']
     dimensions = request.json['dimensions']
@@ -26,7 +26,7 @@ def create_drone(current_user_token):
     series = request.json['series']
     user_token = current_user_token.token
 
-    drone = Drone(name,description,price, cam_quality,flight_time,max_speed,dimensions, weight,cost_of_prod,series,user_token = user_token )
+    drone = Drone(name,description,price, camera_quality,flight_time,max_speed,dimensions, weight,cost_of_prod,series,user_token = user_token )
 
     db.session.add(drone)
     db.session.commit()
@@ -67,7 +67,7 @@ def update_drone(current_user_token, id):
     drone.name = request.json['name']
     drone.description = request.json['description']
     drone.price = request.json['price']
-    drone.cam_quality = request.json['cam_quality']
+    drone.camera_quality = request.json['camera_quality']
     drone.flight_time = request.json['flight_time']
     drone.max_speed = request.json['max_speed']
     drone.dimensions = request.json['dimensions']
