@@ -91,7 +91,7 @@ class Drone(db.Model):
     description = db.Column(db.String(200), nullable = True)
     # Precision means we will have 10 available spaces for numeric value with 2 decimal places at the end of it
     price = db.Column(db.Numeric(precision=10, scale = 2))
-    camera_quality = db.Column(db.String(150), nullable = True)
+    cam_quality = db.Column(db.String(150), nullable = True)
     flight_time = db.Column(db.String(100), nullable = True)
     max_speed = db.Column(db.String(100))
     dimensions = db.Column(db.String(100))
@@ -103,12 +103,12 @@ class Drone(db.Model):
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
     # id goes at the end of the list
-    def __init__(self, name, description, price, camera_quality, flight_time, max_speed, dimensions, weight, cost_of_prod, series, user_token, id = ''):
+    def __init__(self, name, description, price, cam_quality, flight_time, max_speed, dimensions, weight, cost_of_prod, series, user_token, id = ''):
         self.id = self.set_id()
         self.name = name
         self.description = description
         self.price = price
-        self.camera_quality = camera_quality
+        self.cam_quality = cam_quality
         self.flight_time = flight_time
         self.max_speed = max_speed
         self.dimensions = dimensions
@@ -130,7 +130,7 @@ class DroneSchema(ma.Schema):
         # Don't want to expose the token for the user, so not included here
         # This is what we should see as the end result of the json in Insomnia
         # Asking the Schema to create the look and feel of our results
-        fields = ['id', 'name', 'description', 'price', 'camera_quality,' 'flight_time', 'max_speed', 'dimensions', 'weight', 'cost_of_prod', 'series']
+        fields = ['id', 'name', 'description', 'price', 'cam_quality,' 'flight_time', 'max_speed', 'dimensions', 'weight', 'cost_of_prod', 'series']
 
 drone_schema = DroneSchema()
 # many = True means it should display the results in a list if many drones are available/entered
