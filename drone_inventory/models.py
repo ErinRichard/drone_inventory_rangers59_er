@@ -130,7 +130,7 @@ class DroneSchema(ma.Schema):
         # Don't want to expose the token for the user, so not included here
         # This is what we should see as the end result of the json in Insomnia
         # Asking the Schema to create the look and feel of our results
-        fields = ['id', 'name', 'description', 'price', 'cam_quality,' 'flight_time', 'max_speed', 'dimensions', 'weight', 'cost_of_prod', 'series']
+        fields = ['id', 'name', 'description', 'price', 'cam_quality', 'flight_time', 'max_speed', 'dimensions', 'weight', 'cost_of_prod', 'series']
 
 drone_schema = DroneSchema()
 # many = True means it should display the results in a list if many drones are available/entered
