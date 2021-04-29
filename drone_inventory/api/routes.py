@@ -26,7 +26,7 @@ def create_drone(current_user_token):
     series = request.json['series']
     user_token = current_user_token.token
 
-    drone = Drone(name,description,price, cam_quality,flight_time,max_speed,dimensions, weight,cost_of_prod,series,user_token = user_token )
+    drone = Drone(name,description,price,cam_quality,flight_time,max_speed,dimensions,weight,cost_of_prod,series,user_token = user_token )
 
     db.session.add(drone)
     db.session.commit()
